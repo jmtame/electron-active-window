@@ -1,6 +1,6 @@
 const activeWindows = require('./build/Release/wm');
 const os = require('os');
-const exec = require('child_process').execFile;
+const execFile = require('child_process').execFile;
 const fs = require('fs');
 const path = require('path');
 const mac_d = path.join(__dirname, '/mac/window');
@@ -10,7 +10,7 @@ module.exports = () => {
                 getActiveWindow: () => {
                     return new Promise((res, rej) => {
                         if (!fs.existsSync(mac_d)) return rej("Mac binary not found")
-                        exec(mac_d, (error, stdout, stderr) => {
+                        execFile(mac_d, (error, stdout, stderr) => {
                             if (error) return rej(error);
                             const r = stdout || stderr;   
                             var json; try {json = JSON.parse(r);}catch(err){rej(error)}             
