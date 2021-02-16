@@ -5,7 +5,7 @@
   "homepage": "https://bytee.net, https://nullx.me",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nullxx/active-windows"
+    "url": "https://github.com/jmtame/electron-active-window"
   },
   "keywords": [
     "current-window",
