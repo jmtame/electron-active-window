@@ -15,16 +15,16 @@ module.exports = () => {
                             const r = stdout || stderr;   
                             var json; try {json = JSON.parse(r);}catch(err){rej(error)}             
                                 res({
-                                  os: "macos",
-                                  windowClass: json.windowClass,
-                                  windowName: json.windowName,
-                                  windowDesktop: null,
-                                  windowType: null,
-                                  windowPid: json.windowPid,
-                                  atTime: json.time,
-                                  launchDate: json.launchDate,
-                                  isTerminated: json.isTerminated,
-                                });
+                                    os: 'macos',
+                                    windowClass: json.bundleIdentifier,
+                                    windowName: json.name,
+                                    windowDesktop: null,
+                                    windowType: null,
+                                    windowPid: json["PID"],
+                                    atTime: json.time,
+                                    launchDate: json.launchDate,
+                                    isTerminated: json.isTerminated
+                                  })
                         });
                     })
                       
